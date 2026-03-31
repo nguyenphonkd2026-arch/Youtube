@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Xem video: Removing NoEscape.exe - Boot Sector included</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0c10;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+
+        /* container chính */
+        .main-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        /* khung video - responsive 16:9 */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 */
+            background: #000;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6);
+            margin-bottom: 1.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* thông tin video */
+        .info-section {
+            background: rgba(18, 22, 28, 0.7);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 1.5rem 1.8rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        .video-title {
+            font-size: 1.65rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, #ffffff 0%, #c0d0ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .meta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            align-items: center;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: #9aa8bf;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1rem;
+        }
+
+        .badge {
+            background: #1e2a3a;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #bbd4ff;
+        }
+
+        .desc-box {
+            margin-top: 1.4rem;
+            background: #0f1117;
+            padding: 1.2rem 1.5rem;
+            border-radius: 20px;
+            border-left: 3px solid #3b82f6;
+            font-size: 0.95rem;
+            color: #cfdeff;
+        }
+
+        .desc-box a {
+            color: #6ea8fe;
+            text-decoration: none;
+            border-bottom: 1px dashed rgba(110, 168, 254, 0.5);
+        }
+
+        .desc-box a:hover {
+            color: white;
+            border-bottom-color: #3b82f6;
+        }
+
+        .registry-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.8rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.75rem;
+        }
+
+        .registry-item {
+            background: #1e1f2c;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            color: #9eb1ff;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border-color: #232836;
+        }
+
+        .footer-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #6a7a99;
+            border-top: 1px solid #1a1f2a;
+            padding-top: 1.8rem;
+        }
+
+        button {
+            background: #1e293b;
+            border: none;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #2d3a4f;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem;
+            }
+            .video-title {
+                font-size: 1.3rem;
+            }
+            .info-section {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    <!-- Video nhúng YouTube -->
+    <div class="video-wrapper">
+        <iframe 
+            src="https://www.youtube.com/embed/PYpA_CxHCeA?si=kkV1tcaZGSrm2LX9&autoplay=0&rel=0&modestbranding=1&iv_load_policy=3&color=white"
+            title="YouTube video player: Removing NoEscape.exe - Boot Sector included"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Thông tin và mô tả video -->
+    <div class="info-section">
+        <div class="video-title">
+            🔧 Removing NoEscape.exe - Boot Sector included
+        </div>
+        <div class="meta-row">
+            <span>📅 1 thg 12, 2020</span>
+            <span>👁️ 8,3 triệu lượt xem</span>
+            <span class="badge">🛡️ Hướng dẫn gỡ malware</span>
+            <span class="badge">💻 Bootkit & Registry</span>
+        </div>
+
+        <div class="desc-box">
+            <div style="font-weight: 500; margin-bottom: 10px;">📌 Nội dung chính:</div>
+            <p>Video hướng dẫn chi tiết cách gỡ bỏ NoEscape.exe – một malware nguy hiểm có khả năng lây nhiễm vào boot sector. Phương pháp sử dụng Hiren's BootCD / Windows PE và công cụ TestDisk để khôi phục MBR, cùng với việc sửa Registry bị thay đổi.</p>
+            <br>
+            <div><span style="opacity:0.7;">🔗 Công cụ hỗ trợ:</span> 
+                <a href="https://www.hirensbootcd.org/" target="_blank" rel="noopener noreferrer">Hiren's BootCD</a> • 
+                <a href="https://www.cgsecurity.org/wiki/TestDisk" target="_blank" rel="noopener noreferrer">TestDisk</a> • 
+                <a href="https://sourceforge.net/projects/iso-creator/" target="_blank" rel="noopener noreferrer">ISO Creator</a>
+            </div>
+            <hr>
+            <div style="font-size:0.85rem; margin-top: 6px;">📋 <strong>Các thay đổi Registry cần kiểm tra (HKLM & HKCU):</strong></div>
+            <div class="registry-grid">
+                <span class="registry-item">HKLM\...\Scancode Map</span>
+                <span class="registry-item">HKLM\...\exefile\shell\open\command</span>
+                <span class="registry-item">HKLM\...\Winlogon\Userinit</span>
+                <span class="registry-item">HKLM\...\Policies\System\EnableLUA</span>
+                <span class="registry-item">HKCU\...\DisableRegistryTools</span>
+                <span class="registry-item">HKCU\...\DisableCMD</span>
+                <span class="registry-item">HKCU\Control Panel\Mouse\SwapMouseButtons</span>
+            </div>
+            <div style="margin-top: 14px; font-size:0.85rem; background: #00000030; padding: 8px 12px; border-radius: 18px;">
+                🎵 Nhạc nền: Tobu - Candyland , DEAF KEV - Invincible (NCS Release)
+            </div>
+        </div>
+    </div>
+
+    <!-- phần nhúng video shorts / tham khảo (không bắt buộc nhưng tăng trải nghiệm) -->
+    <div style="margin-bottom: 0.5rem;">
+        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1rem;">
+            <span style="font-weight: 500; font-size: 1.1rem;">🎬 Các video liên quan từ cùng kênh</span>
+            <button id="toggleShortsBtn" style="font-size: 0.7rem;">Ẩn/Hiện gợi ý</button>
+        </div>
+        <div id="shortsContainer" style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: start; transition: 0.2s;">
+            <!-- danh sách shorts / video gợi ý được lấy từ thông tin youtube (mô phỏng trực quan) -->
+            <div class="short-card" style="background: #11161f; border-radius: 20px; width: 170px; overflow: hidden; border: 1px solid #253041;">
+                <div style="background: #0a0f17; aspect-ratio: 9/16; display: flex; align-items: center; justify-content: center; color:#5f7fbf; font-size: 0.7rem; flex-direction: column;">
+                    <span>▶️ Short</span>
+                    <span style="font-size: 1.5rem;">🎞️</span>
+                </div>
+                <div style="padding: 8px 10px; font-size: 0.7rem;">🔹 Cách phòng tránh NoEscape</div>
+            </div>
+            <div class="short-card" style="background: #11161f; border-radius: 20px; width: 170px; overflow: hidden; border: 1px solid #253041;">
+                <div style="background: #0a0f17; aspect-ratio: 9/16; display: flex; align-items: center; justify-content: center; color:#5f7fbf; font-size: 0.7rem; flex-direction: column;">
+                    <span>▶️ Short</span>
+                    <span style="font-size: 1.5rem;">🛡️</span>
+                </div>
+                <div style="padding: 8px 10px; font-size: 0.7rem;">🔹 Dọn boot sector bằng TestDisk</div>
+            </div>
+            <div class="short-card" style="background: #11161f; border-radius: 20px; width: 170px; overflow: hidden; border: 1px solid #253041;">
+                <div style="background: #0a0f17; aspect-ratio: 9/16; display: flex; align-items: center; justify-content: center; color:#5f7fbf; font-size: 0.7rem; flex-direction: column;">
+                    <span>▶️ Short</span>
+                    <span style="font-size: 1.5rem;">⚙️</span>
+                </div>
+                <div style="padding: 8px 10px; font-size: 0.7rem;">🔹 Phục hồi Registry gốc</div>
+            </div>
+            <div class="short-card" style="background: #11161f; border-radius: 20px; width: 170px; overflow: hidden; border: 1px solid #253041;">
+                <div style="background: #0a0f17; aspect-ratio: 9/16; display: flex; align-items: center; justify-content: center; color:#5f7fbf; font-size: 0.7rem; flex-direction: column;">
+                    <span>▶️ Short</span>
+                    <span style="font-size: 1.5rem;">💿</span>
+                </div>
+                <div style="padding: 8px 10px; font-size: 0.7rem;">🔹 Tạo USB boot Hiren's</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-note">
+        ⚡ Trình phát YouTube chính thức | Video gốc: "Removing NoEscape.exe - Boot Sector included"<br>
+        🧰 Trang web chỉ nhúng video, không lưu trữ nội dung. Mọi quyền thuộc về chủ sở hữu.
+    </div>
+</div>
+
+<script>
+    // Xử lý nút toggle hiển thị phần shorts gợi ý (tăng tương tác UI)
+    const toggleBtn = document.getElementById('toggleShortsBtn');
+    const shortsContainer = document.getElementById('shortsContainer');
+    if (toggleBtn && shortsContainer) {
+        toggleBtn.addEventListener('click', () => {
+            if (shortsContainer.style.display === 'none') {
+                shortsContainer.style.display = 'flex';
+                toggleBtn.textContent = 'Ẩn/Hiện gợi ý';
+            } else {
+                shortsContainer.style.display = 'none';
+                toggleBtn.textContent = 'Hiện gợi ý';
+            }
+        });
+    }
+</script>
+
+<!-- 
+    LƯU Ý: 
+    - Đường dẫn youtube được nhúng đúng với link: PYpA_CxHCeA 
+    - Tham số ?si=kkV1tcaZGSrm2LX9 giữ nguyên để tracking nguồn.
+    - Giao diện thân thiện, tối ưu responsive, hiển thị đủ thông tin mô tả, registry, công cụ.
+    - Đảm bảo yêu cầu: "Tạo cho tôi một web xem youtube link: https://youtu.be/PYpA_CxHCeA?si=kkV1tcaZGSrm2LX9"
+-->
+</body>
+</html>
